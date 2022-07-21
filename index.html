@@ -10,36 +10,39 @@
 </head>
 <body>
     <div class="calc">
-        <div class="screen"></div> 
+        <div class="screen">
+            <div class="screen-last">0</div>
+            <div class="screen-current">1</div>
+        </div> 
         <div class="buttons">
             <div class="top">
-                <button class="top btn left" onclick="this.blur();">Clear</button>
-                <button class="top btn right" onclick="this.blur();">Delete</button>
+                <button class="top btn left" id="clear" onclick="this.blur();">Clear</button>
+                <button class="top btn right" id="delete" onclick="this.blur();">Delete</button>
             </div>
             <div class="grid">
                 <div class="one">
-                    <button class="btn" onclick="this.blur();">7</button>
-                    <button class="btn" onclick="this.blur();">8</button>
-                    <button class="btn" onclick="this.blur();">9</button>
-                    <button class="btn" onclick="this.blur();">÷</button>
+                    <button class="btn" id="7" onclick="this.blur();">7</button>
+                    <button class="btn" id="8" onclick="this.blur();">8</button>
+                    <button class="btn" id="9" onclick="this.blur();">9</button>
+                    <button class="btn operand" id="÷" onclick="this.blur();">÷</button>
                 </div>
                 <div class="two">
-                    <button class="btn" onclick="this.blur();">4</button>
-                    <button class="btn" onclick="this.blur();">5</button>
-                    <button class="btn" onclick="this.blur();">6</button>
-                    <button class="btn" onclick="this.blur();">×</button>
+                    <button class="btn" id="4" onclick="this.blur();">4</button>
+                    <button class="btn" id="5" onclick="this.blur();">5</button>
+                    <button class="btn" id="6" onclick="this.blur();">6</button>
+                    <button class="btn operand" id="×" onclick="this.blur();">×</button>
                 </div>
                 <div class="three">
-                    <button class="btn" onclick="this.blur();">1</button>
-                    <button class="btn" onclick="this.blur();">2</button>
-                    <button class="btn" onclick="this.blur();">3</button>
-                    <button class="btn" onclick="this.blur();">-</button>
+                    <button class="btn" id="1" onclick="this.blur();">1</button>
+                    <button class="btn" id="2" onclick="this.blur();">2</button>
+                    <button class="btn" id="3" onclick="this.blur();">3</button>
+                    <button class="btn operand" id="-" onclick="this.blur();">-</button>
                 </div>
                 <div class="four">
-                    <button class="btn" onclick="this.blur();">.</button>
-                    <button class="btn" onclick="this.blur();">0</button>
-                    <button class="btn" onclick="this.blur();">=</button>
-                    <button class="btn" onclick="this.blur();">+</button>
+                    <button class="btn" id="." onclick="this.blur();">.</button>
+                    <button class="btn" id="0" onclick="this.blur();">0</button>
+                    <button class="btn" id="=" onclick="this.blur();">=</button>
+                    <button class="btn operand" id="+" onclick="this.blur();">+</button>
                 </div>
 
             </div>
