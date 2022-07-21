@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc {
+    display: flex;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    height: 520px;
+    width: 340px;
+    margin-top: 50px;
+}
+
+.screen {
+    width: 290px;
+    height: 100px;
+    margin: -70px 5px 10px 5px;
+    background-color: lightgray;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -80px;
+}
+
+.one {
+    display: flex;
+}
+
+.two {
+    display: flex;
+}
+
+.three {
+    display: flex;
+}
+
+.four {
+    display: flex;
+}
+
+.btn {
+    width: 65px;
+    height: 65px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.top.btn {
+    width: 140px;
+}
+
