@@ -1,4 +1,4 @@
-let add = (num1, num2) => num1 + num2;
+let add = (num1, num2) => +num1 + +num2;
 let subtract = (num1, num2) => num1 - num2;
 let multiply = (num1, num2) => num1 * num2;
 let divide = (num1, num2) => num1 / num2;
@@ -11,6 +11,10 @@ let operate = (num1, operand, num2) => {
     } else if(operand === "×"){
         return multiply(num1, num2)
     } else if(operand === "÷"){
+        if(num2 == 0){
+            alert("You can't divide by 0!!");
+            return
+        }
         return divide(num1, num2)
     }
 }
@@ -33,25 +37,34 @@ function clicked(e){
 
     if(this.classList.contains("operand")){
         if(+screenLast.textContent == screenLast.textContent){
-            screenLast.textContent += screenCurrent.textContent + " " + this.id;
-            screenCurrent.textContent = "";
+            if(screenLast.textContent == ""){
+                screenLast.textContent += screenCurrent.textContent + " " + this.id;
+                screenCurrent.textContent = "0";
+                return
+            } 
+            screenLast.textContent += " " + this.id;
+            screenCurrent.textContent = "0";
+            return
         }
         screenLast.textContent = screenLast.textContent.slice(0, screenLast.textContent.length-2);
-        screenLast.textContent += screenCurrent.textContent + " " + this.id;
-        screenCurrent.textContent = "";
+        screenLast.textContent += " " + this.id;
+        screenCurrent.textContent = "0";
         return
     }
     if(this.classList.contains("equal")){
         if(+screenCurrent.textContent == screenCurrent.textContent){
             if(+screenLast.textContent != screenLast.textContent){
-                console.log(operate(split[0], split[1], screenCurrent.textContent))
+                let split = screenLast.textContent.split(" ");
                 screenLast.textContent = operate(split[0], split[1], screenCurrent.textContent);
-                screenCurrent.textContent = "";
+                screenCurrent.textContent = "0";
                 return;
             }
         }
+        return
     }
     if(+screenCurrent.textContent == screenCurrent.textContent){
+        if((screenCurrent.textContent == "0") && (+screenLast.textContent == screenLast.textContent))
+            screenLast.textContent = "";
         screenCurrent.textContent += this.id;
         screenCurrent.textContent = +screenCurrent.textContent;
     }
@@ -62,7 +75,7 @@ function clear(){
     let screenCurrent = document.querySelector(".screen-current");
 
     screenLast.textContent = "";
-    screenCurrent.textContent = "";
+    screenCurrent.textContent = "0";
 }
 
 function deleted(){
